@@ -1,22 +1,24 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.0.4'
-	id 'io.spring.dependency-management' version '1.1.0'
+	id 'java' // provides java support in Gradle, setting up tasks to compile, build, and test the application
+	id 'org.springframework.boot' version '3.0.4' // provides spring boot support in Gradle and declares which version to use
+	id 'io.spring.dependency-management' version '1.1.0' // provides dependency management features for spring
 }
 
-group = 'com.polarbookshop'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+group = 'com.polarbookshop' // the group id for the Catalog Service project
+version = '0.0.1-SNAPSHOT' // the version of the application "0.0.1" is the default value
+sourceCompatibility = '17' // java version used in the project
 
 repositories {
-	mavenCentral()
+	mavenCentral() // artifact repositories to search for dependencies
 }
 
 dependencies {
+	// dependencies used in the project
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+// enables testing with the JUnit Platform provided by JUnit 5
 tasks.named('test') {
 	useJUnitPlatform()
 }
